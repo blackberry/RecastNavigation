@@ -6,6 +6,45 @@ The _**RecastNavigation**_ repository holds the sources for the Recast Navigatio
 
 * [Sean Paul Taylor](https://github.com/seanpaultaylor)
 
+## Building for BlackBerry
+
+Building from Command-line:
+
+    - cd [bbndk]                    where [bbndk] is where the QNX NDK was installed (i.e. C:\bbndk)
+    - bbndk-env.bat                 on Windows or bbndk-env.sh on MacOSX or Linux
+    - cd [RecastNavigation]/qnx		where [RecastNavigation] is the directory where RecastNavigation was extracted to
+    - make
+
+Following this, the relevant static libraries should reside in the following subdirectories:
+
+    libDetour: 
+        [RecastNavigation]/qnx/Detour/arm/a.le.v7           (ARM release)
+        [RecastNavigation]/qnx/Detour/arm/a.le.v7.g         (ARM debug)
+        [RecastNavigation]/qnx/Detour/x86/a                 (x86 simulator release)
+        [RecastNavigation]/qnx/Detour/x86/a.g               (x86 simulator debug)
+        
+     libDetourCrowd: 
+        [RecastNavigation]/qnx/DetourCrowd/arm/a.le.v7      (ARM release)
+        [RecastNavigation]/qnx/DetourCrowd/arm/a.le.v7.g    (ARM debug)
+        [RecastNavigation]/qnx/DetourCrowd/x86/a            (x86 simulator release)
+        [RecastNavigation]/qnx/DetourCrowd/x86/a.g          (x86 simulator debug)
+
+    libDetour: 
+        [RecastNavigation]/qnx/Recast/arm/a.le.v7           (ARM release)
+        [RecastNavigation]/qnx/Recast/arm/a.le.v7.g         (ARM debug)
+        [RecastNavigation]/qnx/Recast/x86/a                 (x86 simulator release)
+        [RecastNavigation]/qnx/Recast/x86/a.g               (x86 simulator debug)
+        
+Building from Command-line: from Momentics IDE:
+
+    - Right click on Project Explorer->Import.
+    - Select Existing Existing Project into Workspace->Next
+    - Select root directory: as [RecastNavigation] 
+    - Check the "Detour", "DetourCrowd" and "Recast" projects (without copying project option). Then click Finish.
+    - Right click the "Detour" project then Build.
+    - Right click the "DetourCrowd" project then Build.
+    - Right click the "Recast" project then Build.
+
 
 ## Bug Reporting and Feature Requests
 
